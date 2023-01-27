@@ -1,8 +1,10 @@
 import Head from 'next/head'
 import { Inter } from '@next/font/google'
-import Header from '@/components/Header'
+import Header from '@/components/header/Header'
 import Login from '@/components/Login';
 import { getSession } from 'next-auth/react';
+import Sidebar from '@/components/sidebar/Sidebar';
+import Feed from '@/components/feed/Feed';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,9 +17,11 @@ export default function Home({ session }) {
         <title>Facebook clone</title>
       </Head>
       <Header />
-      <main>
+      <main className='flex'>
         {/* Sidebar */}
+        <Sidebar />
         {/* Feed */}
+        <Feed />
         {/* Widgets */}
       </main>
     </div>
